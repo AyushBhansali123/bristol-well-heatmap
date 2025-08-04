@@ -1,0 +1,225 @@
+
+🔢 TEMPERATURE PROPAGATION ANALYSIS REPORT
+========================================
+
+📍 CLUSTER ANALYZED:
+- Wells: GP-100, GW-1, GW-10, GW-11, GW-12, GW-13, GW-14, GW-15, GW-17, GW-2, GW-3, GW-4, GW-5, GW-6, GW-8, GW-9
+- Centroid: (273.8, 307.1)
+- Analysis period: 2022-02-02 13:00:00 to 2024-10-30 14:14:00
+
+📊 STATISTICAL RESULTS:
+- Significant temperature increases detected: 282
+- Pearson correlation (time vs angle): -0.027 (p-value: 0.6515)
+- Spearman correlation (time vs angle): -0.034 (p-value: 0.5752)
+
+🌀 PROPAGATION PATTERN:
+- ❓ No clear directional propagation pattern detected
+
+📈 TREND ANALYSIS:
+- Angular change rate: -0.0004099764403042471°/hour
+- Mean activation angle: -61.6°
+- Angular spread: 104.7°
+
+🎯 INTERPRETATION:
+- Temperature changes appear random or non-directional
+
+⌛ TEMPORAL CROSS-CORRELATION ANALYSIS:
+====================================
+
+📊 ANALYSIS PARAMETERS:
+- Wells analyzed: GP-100, GW-1, GW-10, GW-11, GW-12, GW-13, GW-14, GW-15, GW-17, GW-2, GW-3, GW-4, GW-5, GW-6, GW-8, GW-9
+- Time period: 2023-04-20 00:00:00 to 2024-12-18 09:17:00
+- Data points: 576 days
+- Maximum lag tested: 10 days
+
+🔗 SIGNIFICANT CORRELATIONS (|r| > 0.3):
+
+- GW-1 ↔ GW-12: r=0.989
+- GW-12 ↔ GW-15: r=0.985
+- GW-12 ↔ GW-6: r=0.980
+- GW-15 ↔ GW-6: r=0.980
+- GW-1 ↔ GW-6: r=0.979
+- GW-1 ↔ GW-15: r=0.978
+- GW-12 ↔ GW-5: r=0.976
+- GW-10 ↔ GW-15: r=0.973
+- GW-15 ↔ GW-5: r=0.973
+- GW-5 ↔ GW-6: r=0.972
+- GW-13 ↔ GW-4: r=0.972 (lag: 2 days)
+- GW-1 ↔ GW-5: r=0.971
+- GW-2 ↔ GW-3: r=0.971
+- GW-11 ↔ GW-12: r=0.968 (lag: -1 days)
+- GW-1 ↔ GW-2: r=0.967
+- GW-10 ↔ GW-12: r=0.965
+- GW-12 ↔ GW-14: r=0.965 (lag: 3 days)
+- GW-1 ↔ GW-14: r=0.963 (lag: 2 days)
+- GW-12 ↔ GW-9: r=0.962
+- GW-8 ↔ GW-9: r=0.962
+- GW-11 ↔ GW-15: r=0.961 (lag: -1 days)
+- GW-1 ↔ GW-13: r=0.961 (lag: -2 days)
+- GW-12 ↔ GW-13: r=0.961
+- GW-13 ↔ GW-6: r=0.959
+- GW-12 ↔ GW-2: r=0.959
+- GW-10 ↔ GW-5: r=0.958
+- GW-15 ↔ GW-8: r=0.958
+- GW-10 ↔ GW-6: r=0.956
+- GW-15 ↔ GW-9: r=0.955
+- GW-13 ↔ GW-5: r=0.954
+- GW-13 ↔ GW-2: r=0.954
+- GW-1 ↔ GW-10: r=0.954
+- GW-11 ↔ GW-6: r=0.953 (lag: -1 days)
+- GW-12 ↔ GW-8: r=0.952
+- GW-1 ↔ GW-11: r=0.952 (lag: 1 days)
+- GW-14 ↔ GW-15: r=0.951 (lag: -2 days)
+- GW-2 ↔ GW-6: r=0.951
+- GW-14 ↔ GW-5: r=0.950 (lag: -2 days)
+- GW-15 ↔ GW-2: r=0.948
+- GW-13 ↔ GW-15: r=0.946 (lag: 2 days)
+- GW-10 ↔ GW-9: r=0.945
+- GW-2 ↔ GW-5: r=0.945
+- GW-14 ↔ GW-2: r=0.945 (lag: -2 days)
+- GW-11 ↔ GW-13: r=0.944 (lag: -1 days)
+- GW-10 ↔ GW-11: r=0.943 (lag: 1 days)
+- GW-11 ↔ GW-5: r=0.943 (lag: -1 days)
+- GW-1 ↔ GW-9: r=0.943
+- GW-12 ↔ GW-4: r=0.941 (lag: 1 days)
+- GW-6 ↔ GW-9: r=0.941
+- GW-10 ↔ GW-8: r=0.939
+- GW-4 ↔ GW-6: r=0.939 (lag: -1 days)
+- GW-10 ↔ GW-14: r=0.939
+- GW-1 ↔ GW-4: r=0.939 (lag: 1 days)
+- GW-14 ↔ GW-6: r=0.937 (lag: -2 days)
+- GW-5 ↔ GW-9: r=0.936
+- GW-1 ↔ GW-3: r=0.936
+- GW-5 ↔ GW-8: r=0.936
+- GW-11 ↔ GW-14: r=0.933 (lag: 3 days)
+- GW-11 ↔ GW-8: r=0.930 (lag: 1 days)
+- GW-15 ↔ GW-4: r=0.930
+- GW-1 ↔ GW-8: r=0.929
+- GW-6 ↔ GW-8: r=0.929
+- GW-11 ↔ GW-9: r=0.929 (lag: -1 days)
+- GW-11 ↔ GW-4: r=0.927 (lag: -1 days)
+- GW-13 ↔ GW-14: r=0.926 (lag: 6 days)
+- GW-14 ↔ GW-3: r=0.926
+- GW-11 ↔ GW-2: r=0.925
+- GW-4 ↔ GW-5: r=0.923 (lag: -1 days)
+- GW-14 ↔ GW-8: r=0.921
+- GW-2 ↔ GW-4: r=0.919 (lag: 2 days)
+- GW-14 ↔ GW-9: r=0.918 (lag: -1 days)
+- GW-12 ↔ GW-3: r=0.917 (lag: 2 days)
+- GW-15 ↔ GW-3: r=0.916
+- GW-14 ↔ GW-4: r=0.914 (lag: -1 days)
+- GW-10 ↔ GW-2: r=0.908
+- GW-4 ↔ GW-9: r=0.907 (lag: -1 days)
+- GW-13 ↔ GW-9: r=0.907
+- GW-4 ↔ GW-8: r=0.906 (lag: -1 days)
+- GW-3 ↔ GW-6: r=0.904
+- GW-3 ↔ GW-5: r=0.902
+- GW-2 ↔ GW-9: r=0.901
+- GW-10 ↔ GW-13: r=0.899 (lag: -3 days)
+- GW-13 ↔ GW-3: r=0.897 (lag: 2 days)
+- GW-13 ↔ GW-8: r=0.896 (lag: 1 days)
+- GW-11 ↔ GW-3: r=0.888
+- GW-10 ↔ GW-3: r=0.886
+- GW-10 ↔ GW-4: r=0.885
+- GW-2 ↔ GW-8: r=0.879
+- GW-3 ↔ GW-4: r=0.864 (lag: 1 days)
+- GW-3 ↔ GW-9: r=0.842 (lag: -2 days)
+- GW-3 ↔ GW-8: r=0.838
+- GW-17 ↔ GW-4: r=0.742 (lag: 4 days)
+- GW-13 ↔ GW-17: r=0.730 (lag: -7 days)
+- GW-11 ↔ GW-17: r=0.722 (lag: -10 days)
+- GW-15 ↔ GW-17: r=0.684 (lag: -10 days)
+- GW-17 ↔ GW-6: r=0.676 (lag: 10 days)
+- GW-12 ↔ GW-17: r=0.673 (lag: -10 days)
+- GW-17 ↔ GW-8: r=0.672 (lag: 7 days)
+- GW-10 ↔ GW-17: r=0.664 (lag: -10 days)
+- GW-17 ↔ GW-5: r=0.645 (lag: 10 days)
+- GW-1 ↔ GW-17: r=0.635 (lag: -10 days)
+- GW-17 ↔ GW-9: r=0.629 (lag: 8 days)
+- GW-17 ↔ GW-2: r=0.596 (lag: 10 days)
+- GP-100 ↔ GW-14: r=-0.578 (lag: 10 days)
+- GW-14 ↔ GW-17: r=0.572 (lag: -10 days)
+- GP-100 ↔ GW-5: r=-0.572 (lag: 10 days)
+- GP-100 ↔ GW-8: r=-0.571 (lag: 10 days)
+- GP-100 ↔ GW-15: r=-0.571 (lag: 9 days)
+- GW-17 ↔ GW-3: r=0.569 (lag: 10 days)
+- GP-100 ↔ GW-6: r=-0.554 (lag: 3 days)
+- GP-100 ↔ GW-3: r=-0.552 (lag: 4 days)
+- GP-100 ↔ GW-1: r=-0.551 (lag: 6 days)
+- GP-100 ↔ GW-10: r=-0.551 (lag: 10 days)
+- GP-100 ↔ GW-12: r=-0.541 (lag: 7 days)
+- GP-100 ↔ GW-2: r=-0.529 (lag: 2 days)
+- GP-100 ↔ GW-11: r=-0.517 (lag: 8 days)
+- GP-100 ↔ GW-9: r=-0.512 (lag: 10 days)
+- GP-100 ↔ GW-13: r=-0.511 (lag: -4 days)
+- GP-100 ↔ GW-4: r=-0.450 (lag: 5 days)
+
+🔗 CAUSAL CHAINS (|r| > 0.5 with lag > 0):
+- GW-13 → GW-4 (lag: 2 days, r=0.972)
+- GW-12 → GW-11 (lag: 1 days, r=0.968)
+- GW-12 → GW-14 (lag: 3 days, r=0.965)
+- GW-1 → GW-14 (lag: 2 days, r=0.963)
+- GW-15 → GW-11 (lag: 1 days, r=0.961)
+- GW-13 → GW-1 (lag: 2 days, r=0.961)
+- GW-6 → GW-11 (lag: 1 days, r=0.953)
+- GW-1 → GW-11 (lag: 1 days, r=0.952)
+- GW-15 → GW-14 (lag: 2 days, r=0.951)
+- GW-5 → GW-14 (lag: 2 days, r=0.950)
+- GW-13 → GW-15 (lag: 2 days, r=0.946)
+- GW-2 → GW-14 (lag: 2 days, r=0.945)
+- GW-13 → GW-11 (lag: 1 days, r=0.944)
+- GW-10 → GW-11 (lag: 1 days, r=0.943)
+- GW-5 → GW-11 (lag: 1 days, r=0.943)
+- GW-12 → GW-4 (lag: 1 days, r=0.941)
+- GW-6 → GW-4 (lag: 1 days, r=0.939)
+- GW-1 → GW-4 (lag: 1 days, r=0.939)
+- GW-6 → GW-14 (lag: 2 days, r=0.937)
+- GW-11 → GW-14 (lag: 3 days, r=0.933)
+- GW-11 → GW-8 (lag: 1 days, r=0.930)
+- GW-9 → GW-11 (lag: 1 days, r=0.929)
+- GW-4 → GW-11 (lag: 1 days, r=0.927)
+- GW-13 → GW-14 (lag: 6 days, r=0.926)
+- GW-5 → GW-4 (lag: 1 days, r=0.923)
+- GW-2 → GW-4 (lag: 2 days, r=0.919)
+- GW-9 → GW-14 (lag: 1 days, r=0.918)
+- GW-12 → GW-3 (lag: 2 days, r=0.917)
+- GW-4 → GW-14 (lag: 1 days, r=0.914)
+- GW-9 → GW-4 (lag: 1 days, r=0.907)
+- GW-8 → GW-4 (lag: 1 days, r=0.906)
+- GW-13 → GW-10 (lag: 3 days, r=0.899)
+- GW-13 → GW-3 (lag: 2 days, r=0.897)
+- GW-13 → GW-8 (lag: 1 days, r=0.896)
+- GW-3 → GW-4 (lag: 1 days, r=0.864)
+- GW-9 → GW-3 (lag: 2 days, r=0.842)
+- GW-17 → GW-4 (lag: 4 days, r=0.742)
+- GW-17 → GW-13 (lag: 7 days, r=0.730)
+- GW-17 → GW-11 (lag: 10 days, r=0.722)
+- GW-17 → GW-15 (lag: 10 days, r=0.684)
+- GW-17 → GW-6 (lag: 10 days, r=0.676)
+- GW-17 → GW-12 (lag: 10 days, r=0.673)
+- GW-17 → GW-8 (lag: 7 days, r=0.672)
+- GW-17 → GW-10 (lag: 10 days, r=0.664)
+- GW-17 → GW-5 (lag: 10 days, r=0.645)
+- GW-17 → GW-1 (lag: 10 days, r=0.635)
+- GW-17 → GW-9 (lag: 8 days, r=0.629)
+- GW-17 → GW-2 (lag: 10 days, r=0.596)
+- GW-17 → GW-14 (lag: 10 days, r=0.572)
+- GW-17 → GW-3 (lag: 10 days, r=0.569)
+- GW-13 → GP-100 (lag: 4 days, r=-0.511)
+- GP-100 → GW-9 (lag: 10 days, r=-0.512)
+- GP-100 → GW-11 (lag: 8 days, r=-0.517)
+- GP-100 → GW-2 (lag: 2 days, r=-0.529)
+- GP-100 → GW-12 (lag: 7 days, r=-0.541)
+- GP-100 → GW-10 (lag: 10 days, r=-0.551)
+- GP-100 → GW-1 (lag: 6 days, r=-0.551)
+- GP-100 → GW-3 (lag: 4 days, r=-0.552)
+- GP-100 → GW-6 (lag: 3 days, r=-0.554)
+- GP-100 → GW-15 (lag: 9 days, r=-0.571)
+- GP-100 → GW-8 (lag: 10 days, r=-0.571)
+- GP-100 → GW-5 (lag: 10 days, r=-0.572)
+- GP-100 → GW-14 (lag: 10 days, r=-0.578)
+
+🎯 TEMPORAL DEPENDENCY SUMMARY:
+- Total well pairs analyzed: 120
+- Significant correlations found: 119
+- Strong causal chains detected: 63
