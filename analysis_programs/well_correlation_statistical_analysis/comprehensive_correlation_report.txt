@@ -1,0 +1,176 @@
+
+🔍 COMPREHENSIVE WELL CORRELATION ANALYSIS REPORT
+===============================================
+
+📊 ANALYSIS SUMMARY:
+- Wells analyzed: EW-29, EW-33, EW-34, EW-37, GP-100, GW-1, GW-10, GW-11, GW-12, GW-13, GW-14, GW-15, GW-17, GW-2, GW-3, GW-30, GW-31, GW-32, GW-35, GW-36, GW-38, GW-39, GW-4, GW-40, GW-41, GW-42, GW-46, GW-47, GW-48, GW-49, GW-5, GW-50, GW-52, GW-53, GW-54, GW-55, GW-56, GW-57, GW-58, GW-59, GW-6, GW-61, GW-62, GW-63, GW-64, GW-65, GW-66, GW-67, GW-68, GW-8, GW-9
+- Total well pairs examined: 1275
+- Correlations meeting criteria: 140
+- Analysis date: 2025-08-05 20:14:06
+- Criteria: r > 0.60, p < 0.05, n > 800
+- Statistical validation: Permutation testing for r > 0.9
+
+📊 ALL CORRELATIONS MEETING CRITERIA (r > 0.60, p < 0.05, n > 800):
+
+  1. GW-1 → GW-5: r=0.963, p<0.0000, empirical_p<0.0000, n=1072
+  2. GW-1 → GW-12: r=0.960 (lag: -1 days), p<0.0000, empirical_p<0.0000, n=1071
+  3. GW-12 → GW-6: r=0.958, p<0.0000, empirical_p<0.0000, n=1072
+  4. GW-12 → GW-13: r=0.958, p<0.0000, empirical_p<0.0000, n=1072
+  5. GW-12 → GW-5: r=0.957, p<0.0000, empirical_p<0.0000, n=1072
+  6. GW-13 → GW-5: r=0.953, p<0.0000, empirical_p<0.0000, n=1072
+  7. GW-11 → GW-12: r=0.948, p<0.0000, empirical_p<0.0000, n=1072
+  8. GW-10 → GW-9: r=0.946, p<0.0000, empirical_p<0.0000, n=1072
+  9. GW-15 → GW-6: r=0.946 (lag: -1 days), p<0.0000, empirical_p<0.0000, n=1071
+ 10. GW-10 → GW-15: r=0.945, p<0.0000, empirical_p<0.0000, n=1072
+ 11. GW-10 → GW-6: r=0.944, p<0.0000, empirical_p<0.0000, n=1072
+ 12. GW-1 → GW-13: r=0.942 (lag: -1 days), p<0.0000, empirical_p<0.0000, n=1071
+ 13. GW-12 → GW-8: r=0.940, p<0.0000, empirical_p<0.0000, n=1072
+ 14. GW-15 → GW-9: r=0.940, p<0.0000, empirical_p<0.0000, n=1072
+ 15. GW-14 → GW-6: r=0.939 (lag: -1 days), p<0.0000, empirical_p<0.0000, n=1071
+ 16. GW-10 → GW-5: r=0.939, p<0.0000, empirical_p<0.0000, n=1072
+ 17. GW-12 → GW-14: r=0.939 (lag: 2 days), p<0.0000, empirical_p<0.0000, n=1070
+ 18. GW-10 → GW-12: r=0.937, p<0.0000, empirical_p<0.0000, n=1072
+ 19. GW-5 → GW-6: r=0.937, p<0.0000, empirical_p<0.0000, n=1072
+ 20. GW-1 → GW-6: r=0.937, p<0.0000, empirical_p<0.0000, n=1072
+ 21. GW-12 → GW-15: r=0.936 (lag: 2 days), p<0.0000, empirical_p<0.0000, n=1070
+ 22. GW-11 → GW-13: r=0.934, p<0.0000, empirical_p<0.0000, n=1072
+ 23. GW-1 → GW-11: r=0.932, p<0.0000, empirical_p<0.0000, n=1072
+ 24. GW-14 → GW-5: r=0.932 (lag: -2 days), p<0.0000, empirical_p<0.0000, n=1070
+ 25. GW-10 → GW-14: r=0.932, p<0.0000, empirical_p<0.0000, n=1072
+ 26. GW-8 → GW-9: r=0.932 (lag: 1 days), p<0.0000, empirical_p<0.0000, n=1071
+ 27. GW-10 → GW-8: r=0.931, p<0.0000, empirical_p<0.0000, n=1072
+ 28. GW-5 → GW-8: r=0.931, p<0.0000, empirical_p<0.0000, n=1072
+ 29. GW-14 → GW-8: r=0.930 (lag: -1 days), p<0.0000, empirical_p<0.0000, n=1071
+ 30. GW-12 → GW-9: r=0.927 (lag: 1 days), p<0.0000, empirical_p<0.0000, n=1071
+ 31. GW-1 → GW-10: r=0.927, p<0.0000, empirical_p<0.0000, n=1072
+ 32. GW-11 → GW-5: r=0.926, p<0.0000, empirical_p<0.0000, n=1072
+ 33. GW-1 → GW-14: r=0.925 (lag: 1 days), p<0.0000, empirical_p<0.0000, n=1071
+ 34. GW-1 → GW-2: r=0.925 (lag: 1 days), p<0.0000, empirical_p<0.0000, n=1071
+ 35. GW-13 → GW-6: r=0.924, p<0.0000, empirical_p<0.0000, n=1072
+ 36. GW-6 → GW-8: r=0.923, p<0.0000, empirical_p<0.0000, n=1072
+ 37. GW-2 → GW-6: r=0.923, p<0.0000, empirical_p<0.0000, n=1072
+ 38. GW-6 → GW-9: r=0.921, p<0.0000, empirical_p<0.0000, n=1072
+ 39. GW-14 → GW-9: r=0.919, p<0.0000, empirical_p<0.0000, n=1072
+ 40. GW-14 → GW-15: r=0.919, p<0.0000, empirical_p<0.0000, n=1072
+ 41. GW-1 → GW-8: r=0.918, p<0.0000, empirical_p<0.0000, n=1072
+ 42. GW-1 → GW-3: r=0.917, p<0.0000, empirical_p<0.0000, n=1072
+ 43. GW-13 → GW-2: r=0.917 (lag: 4 days), p<0.0000, empirical_p<0.0000, n=1068
+ 44. GW-12 → GW-2: r=0.916 (lag: 2 days), p<0.0000, empirical_p<0.0000, n=1070
+ 45. GW-13 → GW-4: r=0.916 (lag: 1 days), p<0.0000, empirical_p<0.0000, n=1071
+ 46. GW-11 → GW-6: r=0.912, p<0.0000, empirical_p<0.0000, n=1072
+ 47. GW-1 → GW-9: r=0.911, p<0.0000, empirical_p<0.0000, n=1072
+ 48. GW-14 → GW-2: r=0.911, p<0.0000, empirical_p<0.0000, n=1072
+ 49. GW-5 → GW-9: r=0.909 (lag: 1 days), p<0.0000, empirical_p<0.0000, n=1071
+ 50. GW-1 → GW-15: r=0.908, p<0.0000, empirical_p<0.0000, n=1072
+ 51. GW-12 → GW-3: r=0.905, p<0.0000, empirical_p<0.0000, n=1072
+ 52. GW-13 → GW-14: r=0.903 (lag: 5 days), p<0.0000, empirical_p<0.0000, n=1067
+ 53. GW-11 → GW-8: r=0.903, p<0.0000, empirical_p<0.0000, n=1072
+ 54. GW-2 → GW-3: r=0.902, p<0.0000, empirical_p<0.0000, n=1072
+ 55. GW-15 → GW-8: r=0.901, p<0.0000, empirical_p<0.0000, n=1072
+ 56. GW-11 → GW-14: r=0.900 (lag: 3 days), p<0.0000, empirical_p<0.0000, n=1069
+ 57. GW-15 → GW-5: r=0.897 (lag: -1 days), p<0.0000, n=1071
+ 58. GW-13 → GW-8: r=0.896, p<0.0000, n=1072
+ 59. GW-11 → GW-2: r=0.896 (lag: 2 days), p<0.0000, n=1070
+ 60. GW-2 → GW-5: r=0.896 (lag: -2 days), p<0.0000, n=1070
+ 61. GW-11 → GW-9: r=0.896 (lag: 1 days), p<0.0000, n=1071
+ 62. GW-10 → GW-11: r=0.894, p<0.0000, n=1072
+ 63. GW-13 → GW-3: r=0.894, p<0.0000, n=1072
+ 64. GW-13 → GW-15: r=0.890 (lag: 3 days), p<0.0000, n=1069
+ 65. GW-3 → GW-5: r=0.890, p<0.0000, n=1072
+ 66. GW-11 → GW-15: r=0.887 (lag: 1 days), p<0.0000, n=1071
+ 67. GW-10 → GW-13: r=0.885, p<0.0000, n=1072
+ 68. GW-13 → GW-9: r=0.883 (lag: 2 days), p<0.0000, n=1070
+ 69. GW-4 → GW-5: r=0.881 (lag: -1 days), p<0.0000, n=1071
+ 70. GW-10 → GW-3: r=0.880, p<0.0000, n=1072
+ 71. GW-2 → GW-8: r=0.879 (lag: -2 days), p<0.0000, n=1070
+ 72. GW-2 → GW-9: r=0.877, p<0.0000, n=1072
+ 73. GW-15 → GW-2: r=0.874, p<0.0000, n=1072
+ 74. GW-10 → GW-2: r=0.871, p<0.0000, n=1072
+ 75. GW-12 → GW-4: r=0.871 (lag: 1 days), p<0.0000, n=1071
+ 76. GW-1 → GW-4: r=0.867, p<0.0000, n=1072
+ 77. GW-3 → GW-6: r=0.866, p<0.0000, n=1072
+ 78. GW-15 → GW-3: r=0.865, p<0.0000, n=1072
+ 79. GW-14 → GW-3: r=0.865, p<0.0000, n=1072
+ 80. GW-11 → GW-3: r=0.864, p<0.0000, n=1072
+ 81. GW-14 → GW-4: r=0.840 (lag: -1 days), p<0.0000, n=1071
+ 82. GW-11 → GW-4: r=0.837, p<0.0000, n=1072
+ 83. GW-4 → GW-8: r=0.832, p<0.0000, n=1072
+ 84. GW-4 → GW-6: r=0.825, p<0.0000, n=1072
+ 85. GW-3 → GW-8: r=0.821, p<0.0000, n=1072
+ 86. GW-15 → GW-4: r=0.819, p<0.0000, n=1072
+ 87. GW-10 → GW-4: r=0.816, p<0.0000, n=1072
+ 88. GW-3 → GW-9: r=0.815, p<0.0000, n=1072
+ 89. GW-3 → GW-4: r=0.812 (lag: 1 days), p<0.0000, n=1071
+ 90. GW-4 → GW-9: r=0.795, p<0.0000, n=1072
+ 91. GW-2 → GW-4: r=0.776 (lag: -1 days), p<0.0000, n=1071
+ 92. GW-39 → GW-50: r=0.775 (lag: -9 days), p<0.0000, n=817
+ 93. GW-15 → GW-35: r=0.760, p<0.0000, n=818
+ 94. GW-35 → GW-41: r=0.719 (lag: -9 days), p<0.0000, n=818
+ 95. GW-3 → GW-48: r=0.711 (lag: -9 days), p<0.0000, n=1063
+ 96. GW-39 → GW-41: r=0.700 (lag: -1 days), p<0.0000, n=825
+ 97. GW-13 → GW-48: r=0.699 (lag: -3 days), p<0.0000, n=1069
+ 98. GW-12 → GW-35: r=0.690 (lag: 4 days), p<0.0000, n=814
+ 99. GW-1 → GW-48: r=0.689 (lag: -6 days), p<0.0000, n=1066
+100. GW-2 → GW-48: r=0.689 (lag: -8 days), p<0.0000, n=1064
+101. GW-39 → GW-48: r=0.688 (lag: -3 days), p<0.0000, n=823
+102. GW-41 → GW-56: r=0.687 (lag: 10 days), p<0.0000, n=817
+103. GW-35 → GW-9: r=0.687 (lag: 1 days), p<0.0000, n=817
+104. GW-11 → GW-48: r=0.686 (lag: -8 days), p<0.0000, n=1064
+105. GW-35 → GW-6: r=0.681 (lag: -2 days), p<0.0000, n=816
+106. GW-39 → GW-6: r=0.679 (lag: 7 days), p<0.0000, n=811
+107. GW-52 → GW-61: r=0.667 (lag: -1 days), p<0.0000, n=1092
+108. GW-12 → GW-48: r=0.667 (lag: -4 days), p<0.0000, n=1068
+109. GW-10 → GW-35: r=0.666 (lag: -1 days), p<0.0000, n=817
+110. GW-15 → GW-39: r=0.665 (lag: -9 days), p<0.0000, n=809
+111. GW-12 → GW-39: r=0.662 (lag: -2 days), p<0.0000, n=816
+112. GW-2 → GW-39: r=0.662 (lag: -10 days), p<0.0000, n=808
+113. GW-48 → GW-6: r=0.662 (lag: 6 days), p<0.0000, n=1066
+114. GW-42 → GW-50: r=0.659 (lag: 8 days), p<0.0000, n=1084
+115. GW-13 → GW-35: r=0.659 (lag: 2 days), p<0.0000, n=816
+116. GW-48 → GW-5: r=0.650 (lag: 6 days), p<0.0000, n=1066
+117. GW-15 → GW-48: r=0.646 (lag: -7 days), p<0.0000, n=1065
+118. GW-11 → GW-35: r=0.642 (lag: 1 days), p<0.0000, n=817
+119. GW-47 → GW-50: r=0.639 (lag: -10 days), p<0.0000, n=1071
+120. GW-14 → GW-35: r=0.639 (lag: -3 days), p<0.0000, n=815
+121. GW-50 → GW-68: r=-0.636 (lag: 10 days), p<0.0000, n=1082
+122. GW-13 → GW-39: r=0.633 (lag: 2 days), p<0.0000, n=816
+123. GW-14 → GW-48: r=0.632 (lag: -10 days), p<0.0000, n=1062
+124. GW-10 → GW-39: r=0.629 (lag: -8 days), p<0.0000, n=810
+125. GW-35 → GW-39: r=0.626 (lag: -1 days), p<0.0000, n=825
+126. GW-1 → GW-35: r=0.624 (lag: 1 days), p<0.0000, n=817
+127. GW-10 → GW-48: r=0.622 (lag: -7 days), p<0.0000, n=1065
+128. GW-3 → GW-39: r=0.621 (lag: 3 days), p<0.0000, n=815
+129. GW-49 → GW-65: r=0.619 (lag: -1 days), p<0.0000, n=1092
+130. GW-35 → GW-5: r=0.618 (lag: 1 days), p<0.0000, n=817
+131. EW-29 → GW-42: r=0.616 (lag: 8 days), p<0.0000, n=818
+132. GW-3 → GW-35: r=0.614 (lag: 3 days), p<0.0000, n=815
+133. GW-11 → GW-39: r=0.614 (lag: -5 days), p<0.0000, n=813
+134. GW-39 → GW-8: r=0.613 (lag: 6 days), p<0.0000, n=812
+135. GW-48 → GW-8: r=0.612 (lag: 6 days), p<0.0000, n=1066
+136. GW-50 → GW-61: r=-0.610 (lag: 10 days), p<0.0000, n=1083
+137. GW-15 → GW-41: r=0.608 (lag: -9 days), p<0.0000, n=809
+138. GW-39 → GW-42: r=0.607 (lag: -9 days), p<0.0000, n=817
+139. GW-39 → GW-47: r=0.605 (lag: 7 days), p<0.0000, n=819
+140. GW-39 → GW-9: r=0.602 (lag: 10 days), p<0.0000, n=808
+
+📈 STATISTICAL SUMMARY:
+- Total correlations found: 140
+- Mean correlation strength: r=0.816
+- Strongest correlation: GW-1 → GW-5 (r=0.963)
+- Mean sample size: n=1015
+- Sample size range: n=808 to n=1092
+- Most common lag: 0 days
+- Simultaneous correlations (lag=0): 61 out of 140
+
+🎯 INTERPRETATION:
+- Found 140 statistically significant correlations above r=0.60 threshold
+- Large sample sizes (mean n=1015) provide robust statistical evidence
+- Mixed temporal temperature relationships detected
+- Network shows strong thermal connectivity across well field
+
+⚙️ METHODOLOGY:
+- Cross-correlation analysis with lag detection (-10 to +10 days)
+- Pearson correlation with significance testing (p < 0.05)
+- Permutation testing for correlations > 0.9 (1000 shuffles)
+- Daily temperature resampling with interpolation
+- Minimum sample size requirement: n > 800

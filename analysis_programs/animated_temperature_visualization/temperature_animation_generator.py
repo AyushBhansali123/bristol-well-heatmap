@@ -11,10 +11,10 @@ from sklearn.cluster import KMeans
 
 
 # Load your data
-wells_df = pd.read_csv("wells.csv")
+wells_df = pd.read_csv("../../data_files/wells.csv")
 wells_df["stripped_id"] = wells_df["well_id"].str.extract(r"[-_]?([A-Za-z0-9]+)$")[0]
 
-temp_df = pd.read_excel("Bristol.xlsx", sheet_name="List")
+temp_df = pd.read_excel("../../data_files/Bristol.xlsx", sheet_name="List")
 # Use "Temperature" (capital T) which has 10,569 records vs "temperature" (367 records)
 temp_df = temp_df[temp_df["parameter"] == "Temperature"].copy()
 temp_df["datetime"] = pd.to_datetime(temp_df["datetime"], errors='coerce')

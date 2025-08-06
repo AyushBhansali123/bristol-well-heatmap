@@ -1,0 +1,33 @@
+
+🔢 ENHANCED TEMPERATURE INFLUENCE ANALYSIS REPORT
+==============================================
+
+📍 ANALYSIS SUMMARY:
+- Wells analyzed: GW-1, GW-10, GW-11, GW-12, GW-13, GW-14, GW-15, GW-2, GW-3, GW-4, GW-5, GW-6, GW-7, GW-8, GW-9
+- Total correlations found: 73
+- Analysis date: 2025-08-05 19:28:29
+- Correlation threshold: r > 0.9
+- Statistical validation: Permutation testing (1000 shuffles)
+- Significance level: p < 0.05
+
+📊 STATISTICALLY VALIDATED CORRELATIONS (r > 0.9, p < 0.05):
+
+- GW-12 → GW-7: r=0.969, p<0.0001, n=932\n- GW-1 → GW-5: r=0.967, p<0.0001, n=1072\n- GW-1 → GW-12: r=0.966, p<0.0001, n=1072\n- GW-12 → GW-6: r=0.963, p<0.0001, n=1072\n- GW-7 → GW-14: r=0.960 (lag: 1 days), p<0.0001, n=931\n- GW-10 → GW-9: r=0.960, p<0.0001, n=1072\n- GW-13 → GW-5: r=0.959, p<0.0001, n=1072\n- GW-15 → GW-6: r=0.958, p<0.0001, n=1072\n- GW-12 → GW-5: r=0.958, p<0.0001, n=1072\n- GW-12 → GW-13: r=0.958, p<0.0001, n=1072\n- GW-10 → GW-7: r=0.955, p<0.0001, n=932\n- GW-6 → GW-7: r=0.952, p<0.0001, n=932\n- GW-1 → GW-13: r=0.952, p<0.0001, n=1072\n- GW-10 → GW-12: r=0.950, p<0.0001, n=1072\n- GW-10 → GW-6: r=0.950, p<0.0001, n=1072\n- GW-8 → GW-9: r=0.949, p<0.0001, n=1072\n- GW-1 → GW-7: r=0.948, p<0.0001, n=932\n- GW-7 → GW-8: r=0.948, p<0.0001, n=932\n- GW-10 → GW-15: r=0.948, p<0.0001, n=1072\n- GW-11 → GW-12: r=0.945, p<0.0001, n=1072\n- GW-12 → GW-14: r=0.944 (lag: 2 days), p<0.0001, n=1070\n- GW-10 → GW-5: r=0.944, p<0.0001, n=1072\n- GW-12 → GW-15: r=0.944 (lag: 1 days), p<0.0001, n=1071\n- GW-10 → GW-8: r=0.944, p<0.0001, n=1072\n- GW-1 → GW-11: r=0.942, p<0.0001, n=1072\n- GW-6 → GW-9: r=0.940, p<0.0001, n=1072\n- GW-1 → GW-6: r=0.940, p<0.0001, n=1072\n- GW-10 → GW-14: r=0.938 (lag: 1 days), p<0.0001, n=1071\n- GW-12 → GW-9: r=0.938, p<0.0001, n=1072\n- GW-5 → GW-7: r=0.937, p<0.0001, n=932\n- GW-6 → GW-14: r=0.937 (lag: 1 days), p<0.0001, n=1071\n- GW-15 → GW-9: r=0.936, p<0.0001, n=1072\n- GW-8 → GW-14: r=0.935 (lag: 1 days), p<0.0001, n=1071\n- GW-12 → GW-8: r=0.935, p<0.0001, n=1072\n- GW-1 → GW-14: r=0.934 (lag: 1 days), p<0.0001, n=1071\n- GW-13 → GW-6: r=0.934, p<0.0001, n=1072\n- GW-11 → GW-13: r=0.933, p<0.0001, n=1072\n- GW-5 → GW-6: r=0.932, p<0.0001, n=1072\n- GW-7 → GW-9: r=0.930, p<0.0001, n=932\n- GW-1 → GW-2: r=0.929 (lag: 2 days), p<0.0001, n=1070\n- GW-11 → GW-5: r=0.928, p<0.0001, n=1072\n- GW-5 → GW-14: r=0.928 (lag: 2 days), p<0.0001, n=1070\n- GW-1 → GW-10: r=0.928, p<0.0001, n=1072\n- GW-9 → GW-14: r=0.928 (lag: 1 days), p<0.0001, n=1071\n- GW-5 → GW-8: r=0.928, p<0.0001, n=1072\n- GW-2 → GW-6: r=0.927, p<0.0001, n=1072\n- GW-12 → GW-3: r=0.926 (lag: 2 days), p<0.0001, n=1070\n- GW-1 → GW-9: r=0.926, p<0.0001, n=1072\n- GW-13 → GW-4: r=0.926 (lag: 1 days), p<0.0001, n=1071\n- GW-15 → GW-7: r=0.925, p<0.0001, n=932\n- GW-1 → GW-3: r=0.925, p<0.0001, n=1072\n- GW-14 → GW-2: r=0.925, p<0.0001, n=1072\n- GW-6 → GW-8: r=0.923, p<0.0001, n=1072\n- GW-5 → GW-9: r=0.922, p<0.0001, n=1072\n- GW-13 → GW-7: r=0.920, p<0.0001, n=932\n- GW-11 → GW-6: r=0.920, p<0.0001, n=1072\n- GW-1 → GW-8: r=0.919, p<0.0001, n=1072\n- GW-14 → GW-15: r=0.918, p<0.0001, n=1072\n- GW-13 → GW-2: r=0.916 (lag: 4 days), p<0.0001, n=1068\n- GW-1 → GW-15: r=0.915, p<0.0001, n=1072\n- GW-12 → GW-2: r=0.915 (lag: 2 days), p<0.0001, n=1070\n- GW-10 → GW-11: r=0.915, p<0.0001, n=1072\n- GW-13 → GW-3: r=0.913, p<0.0001, n=1072\n- GW-2 → GW-3: r=0.912, p<0.0001, n=1072\n- GW-11 → GW-9: r=0.911, p<0.0001, n=1072\n- GW-11 → GW-7: r=0.911, p<0.0001, n=932\n- GW-13 → GW-14: r=0.910 (lag: 5 days), p<0.0001, n=1067\n- GW-15 → GW-8: r=0.908, p<0.0001, n=1072\n- GW-9 → GW-2: r=0.908 (lag: 1 days), p<0.0001, n=1071\n- GW-11 → GW-14: r=0.905 (lag: 2 days), p<0.0001, n=1070\n- GW-7 → GW-2: r=0.905 (lag: 1 days), p<0.0001, n=931\n- GW-3 → GW-5: r=0.904, p<0.0001, n=1072\n- GW-10 → GW-13: r=0.902, p<0.0001, n=1072\n
+📈 STATISTICAL SUMMARY:
+- Mean correlation strength: r=0.934
+- Mean sample size: n=1049
+- All p-values: p < 0.05 (statistically significant)
+- Most common lag: 0 days (55 occurrences)
+- Simultaneous correlations (lag=0): 55 out of 73
+
+🎯 INTERPRETATION:
+- All correlations passed rigorous statistical validation
+- Large sample sizes (n=1048) provide robust evidence
+- Predominantly simultaneous temperature relationships detected
+- Network shows strong thermal connectivity
+
+⌛ METHODOLOGY:
+- Cross-correlation analysis with lag detection (-10 to +10 days)
+- Permutation testing with 1000 random shuffles for p-value calculation
+- Empirical p-value computation for non-parametric significance testing
+- Daily temperature resampling with interpolation for data alignment

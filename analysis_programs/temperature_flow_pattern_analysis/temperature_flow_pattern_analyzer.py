@@ -20,10 +20,10 @@ def map_well_id(excel_well_id):
 
 # Load and prepare data
 print("🔍 Loading and preparing temperature data...")
-wells_df = pd.read_csv("wells.csv")
+wells_df = pd.read_csv("../../data_files/wells.csv")
 wells_df["stripped_id"] = wells_df["well_id"].str.extract(r"[-_]?([A-Za-z0-9]+)$")[0]
 
-temp_df = pd.read_excel("Bristol.xlsx", sheet_name="List")
+temp_df = pd.read_excel("../../data_files/Bristol.xlsx", sheet_name="List")
 temp_df = temp_df[temp_df["parameter"] == "Temperature"].copy()
 temp_df["datetime"] = pd.to_datetime(temp_df["datetime"], errors='coerce')
 temp_df["well_id"] = temp_df["well_id"].astype(str)
@@ -575,9 +575,319 @@ if len(cluster_timeseries) >= 2:
         print(f"   - temporal_cross_correlation_results.csv (detailed correlation data)")
         print(f"   - enhanced_temperature_analysis_report.txt (complete report)")
         
+        # 📌 STATISTICAL VALIDATION OF CORRELATIONS
+        print(f"\n📊 STATISTICAL VALIDATION OF CORRELATIONS")
+        print("="*50)
+        
+        # Task 1: Compute p-values for all significant correlations
+        validation_results = []
+        
+        print(f"\n📌 Task 1: Computing Statistical Significance (p-values)")
+        print("-" * 55)
+        
+        for result in correlation_results:
+            if abs(result['best_correlation']) > 0.3:  # Only validate significant correlations
+                well_a = result['well_a']
+                well_b = result['well_b']
+                lag = result['best_lag']
+                
+                ts_a = aligned_data[well_a].values
+                ts_b = aligned_data[well_b].values
+                
+                # Apply the lag and compute correlation with p-value
+                if lag == 0:
+                    corr, p_value = pearsonr(ts_a, ts_b)
+                    direction = "simultaneous"
+                elif lag > 0:
+                    if lag < len(ts_a):
+                        corr, p_value = pearsonr(ts_a[:-lag], ts_b[lag:])
+                        direction = f"{well_a} → {well_b}"
+                    else:
+                        continue
+                else:  # lag < 0
+                    abs_lag = abs(lag)
+                    if abs_lag < len(ts_b):
+                        corr, p_value = pearsonr(ts_b[:-abs_lag], ts_a[abs_lag:])
+                        direction = f"{well_b} → {well_a}"
+                    else:
+                        continue
+                
+                # Significance level assessment
+                if p_value < 0.001:
+                    significance = "***"
+                    sig_text = "highly significant"
+                elif p_value < 0.01:
+                    significance = "**"
+                    sig_text = "very significant"
+                elif p_value < 0.05:
+                    significance = "*"
+                    sig_text = "significant"
+                else:
+                    significance = ""
+                    sig_text = "not significant"
+                
+                print(f"  {direction}: r={corr:.3f}, p={p_value:.6f} {significance} ({sig_text})")
+                
+                validation_results.append({
+                    'well_a': well_a,
+                    'well_b': well_b,
+                    'direction': direction,
+                    'correlation': corr,
+                    'lag': lag,
+                    'p_value': p_value,
+                    'significance': sig_text,
+                    'significant': p_value < 0.05
+                })
+        
+        # Task 2: Permutation Tests
+        print(f"\n📌 Task 2: Permutation Tests (1000 shuffles per pair)")
+        print("-" * 55)
+        print("Running permutation tests to validate against random chance...")
+        
+        n_permutations = 1000
+        permutation_results = []
+        
+        for result in validation_results:
+            if result['significant']:  # Only run permutation tests on significant correlations
+                well_a = result['well_a']
+                well_b = result['well_b']
+                lag = result['lag']
+                real_corr = result['correlation']
+                
+                ts_a = aligned_data[well_a].values
+                ts_b = aligned_data[well_b].values
+                
+                # Generate null distribution through permutation
+                null_correlations = []
+                
+                for perm in range(n_permutations):
+                    # Shuffle the target well's time series
+                    if lag >= 0:
+                        # A leads B, so shuffle B
+                        ts_b_shuffled = np.random.permutation(ts_b)
+                        if lag == 0:
+                            null_corr = pearsonr(ts_a, ts_b_shuffled)[0]
+                        else:
+                            if lag < len(ts_a):
+                                null_corr = pearsonr(ts_a[:-lag], ts_b_shuffled[lag:])[0]
+                            else:
+                                null_corr = 0
+                    else:
+                        # B leads A, so shuffle A
+                        ts_a_shuffled = np.random.permutation(ts_a)
+                        abs_lag = abs(lag)
+                        if abs_lag < len(ts_b):
+                            null_corr = pearsonr(ts_b[:-abs_lag], ts_a_shuffled[abs_lag:])[0]
+                        else:
+                            null_corr = 0
+                    
+                    null_correlations.append(null_corr)
+                
+                null_correlations = np.array(null_correlations)
+                
+                # Calculate empirical p-value
+                if real_corr >= 0:
+                    empirical_p = np.sum(null_correlations >= real_corr) / n_permutations
+                else:
+                    empirical_p = np.sum(null_correlations <= real_corr) / n_permutations
+                
+                # Two-tailed test
+                empirical_p_two_tailed = 2 * min(empirical_p, 1 - empirical_p)
+                
+                # Calculate percentile of real correlation in null distribution
+                percentile = (np.sum(null_correlations < real_corr) / n_permutations) * 100
+                
+                print(f"  {result['direction']}:")
+                print(f"    Real correlation: {real_corr:.3f}")
+                print(f"    Null mean: {np.mean(null_correlations):.3f} ± {np.std(null_correlations):.3f}")
+                print(f"    Empirical p-value: {empirical_p_two_tailed:.4f}")
+                print(f"    Percentile rank: {percentile:.1f}%")
+                
+                # Assess empirical significance
+                if empirical_p_two_tailed < 0.001:
+                    emp_sig = "HIGHLY SIGNIFICANT"
+                elif empirical_p_two_tailed < 0.01:
+                    emp_sig = "VERY SIGNIFICANT"
+                elif empirical_p_two_tailed < 0.05:
+                    emp_sig = "SIGNIFICANT"
+                else:
+                    emp_sig = "NOT SIGNIFICANT"
+                
+                print(f"    Result: {emp_sig} (permutation test)")
+                print()
+                
+                permutation_results.append({
+                    'well_a': well_a,
+                    'well_b': well_b,
+                    'direction': result['direction'],
+                    'real_correlation': real_corr,
+                    'lag': lag,
+                    'null_mean': np.mean(null_correlations),
+                    'null_std': np.std(null_correlations),
+                    'empirical_p_value': empirical_p_two_tailed,
+                    'percentile_rank': percentile,
+                    'null_correlations': null_correlations.tolist(),
+                    'empirically_significant': empirical_p_two_tailed < 0.05
+                })
+        
+        # Create validation visualization
+        if permutation_results:
+            n_tests = len(permutation_results)
+            fig, axes = plt.subplots(2, min(3, n_tests), figsize=(15, 10))
+            if n_tests == 1:
+                axes = np.array([[axes], [axes]])
+            elif n_tests == 2:
+                axes = axes.reshape(2, 2)
+            
+            for i, perm_result in enumerate(permutation_results[:6]):  # Show up to 6 tests
+                row = i // 3
+                col = i % 3
+                
+                if n_tests <= 3:
+                    ax = axes[row] if len(axes.shape) == 1 else axes[row, col] if col < axes.shape[1] else None
+                else:
+                    ax = axes[row, col] if col < axes.shape[1] else None
+                    
+                if ax is None:
+                    continue
+                
+                null_corrs = np.array(perm_result['null_correlations'])
+                real_corr = perm_result['real_correlation']
+                
+                # Plot histogram of null distribution
+                ax.hist(null_corrs, bins=50, alpha=0.7, color='lightblue', 
+                       label=f'Null distribution\n(n={len(null_corrs)})', density=True)
+                
+                # Mark real correlation
+                ax.axvline(real_corr, color='red', linewidth=3, 
+                          label=f'Observed r={real_corr:.3f}')
+                
+                # Mark confidence intervals
+                ci_95 = np.percentile(null_corrs, [2.5, 97.5])
+                ax.axvline(ci_95[0], color='orange', linestyle='--', alpha=0.7, label='95% CI')
+                ax.axvline(ci_95[1], color='orange', linestyle='--', alpha=0.7)
+                
+                ax.set_xlabel('Correlation Coefficient')
+                ax.set_ylabel('Density')
+                ax.set_title(f'{perm_result["direction"]}\n'
+                           f'p={perm_result["empirical_p_value"]:.4f}')
+                ax.legend(fontsize=8)
+                ax.grid(True, alpha=0.3)
+            
+            # Remove empty subplots
+            for i in range(len(permutation_results), 6):
+                row = i // 3
+                col = i % 3
+                if n_tests <= 3:
+                    if len(axes.shape) > 1 and col < axes.shape[1]:
+                        fig.delaxes(axes[row, col])
+                else:
+                    if col < axes.shape[1]:
+                        fig.delaxes(axes[row, col])
+            
+            plt.tight_layout()
+            plt.savefig('statistical_validation_permutation_tests.png', dpi=300, bbox_inches='tight')
+            plt.show()
+        
+        # Summary of validation results
+        print(f"\n📋 STATISTICAL VALIDATION SUMMARY")
+        print("="*40)
+        
+        parametric_significant = sum(1 for r in validation_results if r['significant'])
+        empirical_significant = sum(1 for r in permutation_results if r['empirically_significant'])
+        
+        print(f"Total correlations tested: {len(validation_results)}")
+        print(f"Parametrically significant (p < 0.05): {parametric_significant}")
+        print(f"Empirically significant (permutation p < 0.05): {empirical_significant}")
+        
+        if parametric_significant > 0:
+            concordance = empirical_significant / parametric_significant * 100
+            print(f"Concordance rate: {concordance:.1f}%")
+            
+            if concordance >= 80:
+                print("✅ HIGH CONCORDANCE: Parametric and permutation tests largely agree")
+            elif concordance >= 60:
+                print("⚠️ MODERATE CONCORDANCE: Some disagreement between test methods")
+            else:
+                print("❌ LOW CONCORDANCE: Significant disagreement between test methods")
+        
+        # Final interpretation
+        print(f"\n🎯 FINAL INTERPRETATION:")
+        
+        if empirical_significant > 0:
+            print(f"✅ {empirical_significant} directional correlation(s) validated as statistically significant")
+            print("   These relationships are unlikely to be due to random chance.")
+            
+            # Identify strongest validated relationships
+            strongest_validated = sorted([r for r in permutation_results if r['empirically_significant']], 
+                                       key=lambda x: abs(x['real_correlation']), reverse=True)
+            
+            if strongest_validated:
+                print(f"\n🏆 STRONGEST VALIDATED RELATIONSHIP:")
+                best = strongest_validated[0]
+                print(f"   {best['direction']}: r={best['real_correlation']:.3f}")
+                print(f"   Empirical p-value: {best['empirical_p_value']:.4f}")
+                print(f"   This correlation is stronger than {best['percentile_rank']:.1f}% of random pairs")
+        else:
+            print("❌ No directional correlations validated as statistically significant")
+            print("   Observed patterns may be due to random chance or insufficient data.")
+        
+        # Save validation results
+        validation_df = pd.DataFrame(validation_results)
+        permutation_df = pd.DataFrame([{k: v for k, v in r.items() if k != 'null_correlations'} 
+                                     for r in permutation_results])
+        
+        validation_df.to_csv('statistical_validation_results.csv', index=False)
+        permutation_df.to_csv('permutation_test_results.csv', index=False)
+        
+        # Enhanced final report
+        final_validation_report = enhanced_report + f"""
+
+📊 STATISTICAL VALIDATION RESULTS:
+=================================
+
+📌 PARAMETRIC SIGNIFICANCE TESTS:
+- Total correlations tested: {len(validation_results)}
+- Statistically significant (p < 0.05): {parametric_significant}
+
+📌 PERMUTATION TEST VALIDATION:
+- Permutations per test: {n_permutations}
+- Empirically significant: {empirical_significant}
+- Concordance with parametric tests: {concordance:.1f}%
+
+🏆 VALIDATED DIRECTIONAL RELATIONSHIPS:
+"""
+        
+        if strongest_validated:
+            for i, result in enumerate(strongest_validated[:3], 1):
+                final_validation_report += f"""
+{i}. {result['direction']}:
+   - Correlation: {result['real_correlation']:.3f}
+   - Empirical p-value: {result['empirical_p_value']:.4f}
+   - Percentile rank: {result['percentile_rank']:.1f}%
+"""
+        else:
+            final_validation_report += "\n- No relationships validated as statistically significant"
+        
+        final_validation_report += f"""
+
+🎯 CONCLUSION:
+{f"✅ {empirical_significant} directional correlation(s) are statistically validated" if empirical_significant > 0 else "❌ No directional correlations validated as significant"}
+These results {'confirm' if empirical_significant > 0 else 'do not support'} the hypothesis of non-random temporal dependencies between wells.
+"""
+        
+        with open('final_statistical_validation_report.txt', 'w') as f:
+            f.write(final_validation_report)
+        
+        print(f"\n📁 VALIDATION FILES SAVED:")
+        print(f"   - statistical_validation_permutation_tests.png (permutation test plots)")
+        print(f"   - statistical_validation_results.csv (p-values and significance)")
+        print(f"   - permutation_test_results.csv (empirical test results)")
+        print(f"   - final_statistical_validation_report.txt (complete validated report)")
+        
     else:
         print(f"\n⚠️ Insufficient common time points ({len(common_index)}) for cross-correlation analysis")
 else:
     print(f"\n⚠️ Insufficient wells with adequate data for cross-correlation analysis")
 
-print(f"\n✅ Complete analysis finished!")
+print(f"\n✅ Complete statistical analysis finished!")
