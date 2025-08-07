@@ -54,9 +54,23 @@ print(f"  • Matched records: {len(merged)}")
 print(f"  • Wells with temperature data: {heatmap_data['well_id'].nunique()}")
 
 
-# Load map
-map_img = Image.open("map_image.png")
-map_array = np.array(map_img)
+# Load map - try different available map images
+map_loaded = False
+for img_path in ["../../data_files/map_image.png", "../../data_files/site_map_cropped.png", "../../data_files/cluster2_site_map.png"]:
+    try:
+        print(f"🖼️ Trying to load {img_path}...")
+        map_img = Image.open(img_path)
+        map_array = np.array(map_img)
+        print(f"✅ Successfully loaded map image: {img_path}")
+        map_loaded = True
+        break
+    except:
+        continue
+
+if not map_loaded:
+    print("❌ Could not load any map image. Creating blank background...")
+    # Create a blank white background if no map image is found
+    map_array = np.ones((1000, 1000, 3), dtype=np.uint8) * 255
 
 # Normalize colors
 norm = mcolors.Normalize(vmin=heatmap_data["temperature"].min(), vmax=heatmap_data["temperature"].max())
