@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Well Labeling Tool</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Well Labeling Tool</h1>
+            <p>Upload a sitemap image and click to label well locations</p>
+        </header>
+
+        <section class="instructions">
+            <h3>Instructions:</h3>
+            <ol>
+                <li>Upload a sitemap image (.png, .jpg, or .jpeg)</li>
+                <li>Click anywhere on the image to mark a well location</li>
+                <li>Enter the prefix (GW, EW, HC, or GP) and well number</li>
+                <li>Export all labeled points to CSV when finished</li>
+            </ol>
+        </section>
+
+        <div class="controls">
+            <div class="file-input-wrapper">
+                <input type="file" id="imageUpload" class="file-input" accept=".png,.jpg,.jpeg" />
+                <button class="file-button">📂 Choose Image</button>
+            </div>
+
+            <button id="exportBtn" class="export-btn" disabled>💾 Export to CSV</button>
+
+            <div class="well-count">
+                Wells labeled: <span id="wellCount">0</span>
+            </div>
+        </div>
+
+        <div class="canvas-container">
+            <canvas id="imageCanvas"></canvas>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="labelModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">Label Well</div>
+            <form id="wellForm">
+                <div class="form-group">
+                    <label for="wellPrefix">Prefix:</label>
+                    <select id="wellPrefix" required>
+                        <option value="GW" selected>GW</option>
+                        <option value="EW">EW</option>
+                        <option value="HC">HC</option>
+                        <option value="GP">GP</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="wellNumber">Well Number:</label>
+                    <input type="number" id="wellNumber" required min="1" step="1" placeholder="Enter well number" />
+                </div>
+
+                <div class="modal-buttons">
+                    <button type="button" id="cancelBtn" class="btn btn-secondary">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Add Well</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
